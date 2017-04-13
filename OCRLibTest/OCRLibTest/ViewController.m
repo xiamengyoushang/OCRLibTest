@@ -1,0 +1,57 @@
+//
+//  ViewController.m
+//  OCRLibTest
+//
+//  Created by linkiing on 2017/4/13.
+//  Copyright © 2017年 linkiing. All rights reserved.
+//
+
+#import "ViewController.h"
+#import "CameraViewController.h"
+
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationController.navigationBar.translucent = NO;
+}
+#pragma mark - UITableViewDataSource
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 20;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellId = @"cellId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"OCR图形检测-金色";
+    } else if (indexPath.row == 1){
+        cell.textLabel.text = @"OCR图形检测-白色";
+    }
+    return cell;
+}
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CameraViewController *cameractl = [[CameraViewController alloc] init];
+    cameractl.imageOcrTypeIndex = indexPath.row;
+    [self.navigationController pushViewController:cameractl animated:YES];
+}
+
+
+@end

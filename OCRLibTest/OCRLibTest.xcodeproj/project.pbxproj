@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D828CCEE1E9F783100E8C596 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCED1E9F783100E8C596 /* main.m */; };
+		D828CCF11E9F783100E8C596 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCF01E9F783100E8C596 /* AppDelegate.m */; };
+		D828CCF41E9F783100E8C596 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCF31E9F783100E8C596 /* ViewController.m */; };
+		D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D828CCF51E9F783100E8C596 /* Main.storyboard */; };
+		D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D828CCF81E9F783100E8C596 /* Assets.xcassets */; };
+		D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */; };
+		D828CD071E9F783200E8C596 /* OCRLibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD061E9F783200E8C596 /* OCRLibTestTests.m */; };
+		D828CD121E9F783200E8C596 /* OCRLibTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */; };
+		D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD221E9F78B900E8C596 /* CameraViewController.m */; };
+		D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D828CD231E9F78B900E8C596 /* CameraViewController.xib */; };
+		D828CD261E9F78E400E8C596 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D828CD1F1E9F786600E8C596 /* ImageOCR.framework */; };
+		D828CD271E9F78E400E8C596 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D828CD1F1E9F786600E8C596 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D828CD031E9F783100E8C596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D828CCE11E9F783100E8C596 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D828CCE81E9F783100E8C596;
+			remoteInfo = OCRLibTest;
+		};
+		D828CD0E1E9F783200E8C596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D828CCE11E9F783100E8C596 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D828CCE81E9F783100E8C596;
+			remoteInfo = OCRLibTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D828CD281E9F78E500E8C596 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D828CD271E9F78E400E8C596 /* ImageOCR.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D828CCE91E9F783100E8C596 /* OCRLibTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRLibTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D828CCED1E9F783100E8C596 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D828CCEF1E9F783100E8C596 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D828CCF01E9F783100E8C596 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D828CCF21E9F783100E8C596 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D828CCF31E9F783100E8C596 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D828CCF61E9F783100E8C596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D828CCF81E9F783100E8C596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D828CCFB1E9F783100E8C596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D828CCFD1E9F783100E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D828CD021E9F783100E8C596 /* OCRLibTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRLibTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D828CD061E9F783200E8C596 /* OCRLibTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRLibTestTests.m; sourceTree = "<group>"; };
+		D828CD081E9F783200E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRLibTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRLibTestUITests.m; sourceTree = "<group>"; };
+		D828CD131E9F783200E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D828CD1F1E9F786600E8C596 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
+		D828CD211E9F78B900E8C596 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		D828CD221E9F78B900E8C596 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		D828CD231E9F78B900E8C596 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D828CCE61E9F783100E8C596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D828CD261E9F78E400E8C596 /* ImageOCR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CCFF1E9F783100E8C596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CD0A1E9F783200E8C596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D828CCE01E9F783100E8C596 = {
+			isa = PBXGroup;
+			children = (
+				D828CCEB1E9F783100E8C596 /* OCRLibTest */,
+				D828CD051E9F783100E8C596 /* OCRLibTestTests */,
+				D828CD101E9F783200E8C596 /* OCRLibTestUITests */,
+				D828CCEA1E9F783100E8C596 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D828CCEA1E9F783100E8C596 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D828CCE91E9F783100E8C596 /* OCRLibTest.app */,
+				D828CD021E9F783100E8C596 /* OCRLibTestTests.xctest */,
+				D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D828CCEB1E9F783100E8C596 /* OCRLibTest */ = {
+			isa = PBXGroup;
+			children = (
+				D828CD1F1E9F786600E8C596 /* ImageOCR.framework */,
+				D828CCEF1E9F783100E8C596 /* AppDelegate.h */,
+				D828CCF01E9F783100E8C596 /* AppDelegate.m */,
+				D828CCF21E9F783100E8C596 /* ViewController.h */,
+				D828CCF31E9F783100E8C596 /* ViewController.m */,
+				D828CCF51E9F783100E8C596 /* Main.storyboard */,
+				D828CD211E9F78B900E8C596 /* CameraViewController.h */,
+				D828CD221E9F78B900E8C596 /* CameraViewController.m */,
+				D828CD231E9F78B900E8C596 /* CameraViewController.xib */,
+				D828CCF81E9F783100E8C596 /* Assets.xcassets */,
+				D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */,
+				D828CCFD1E9F783100E8C596 /* Info.plist */,
+				D828CCEC1E9F783100E8C596 /* Supporting Files */,
+			);
+			path = OCRLibTest;
+			sourceTree = "<group>";
+		};
+		D828CCEC1E9F783100E8C596 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D828CCED1E9F783100E8C596 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D828CD051E9F783100E8C596 /* OCRLibTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				D828CD061E9F783200E8C596 /* OCRLibTestTests.m */,
+				D828CD081E9F783200E8C596 /* Info.plist */,
+			);
+			path = OCRLibTestTests;
+			sourceTree = "<group>";
+		};
+		D828CD101E9F783200E8C596 /* OCRLibTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */,
+				D828CD131E9F783200E8C596 /* Info.plist */,
+			);
+			path = OCRLibTestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D828CCE81E9F783100E8C596 /* OCRLibTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D828CD161E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTest" */;
+			buildPhases = (
+				D828CCE51E9F783100E8C596 /* Sources */,
+				D828CCE61E9F783100E8C596 /* Frameworks */,
+				D828CCE71E9F783100E8C596 /* Resources */,
+				D828CD281E9F78E500E8C596 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCRLibTest;
+			productName = OCRLibTest;
+			productReference = D828CCE91E9F783100E8C596 /* OCRLibTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D828CD011E9F783100E8C596 /* OCRLibTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D828CD191E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTestTests" */;
+			buildPhases = (
+				D828CCFE1E9F783100E8C596 /* Sources */,
+				D828CCFF1E9F783100E8C596 /* Frameworks */,
+				D828CD001E9F783100E8C596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D828CD041E9F783100E8C596 /* PBXTargetDependency */,
+			);
+			name = OCRLibTestTests;
+			productName = OCRLibTestTests;
+			productReference = D828CD021E9F783100E8C596 /* OCRLibTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D828CD0C1E9F783200E8C596 /* OCRLibTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D828CD1C1E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTestUITests" */;
+			buildPhases = (
+				D828CD091E9F783200E8C596 /* Sources */,
+				D828CD0A1E9F783200E8C596 /* Frameworks */,
+				D828CD0B1E9F783200E8C596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D828CD0F1E9F783200E8C596 /* PBXTargetDependency */,
+			);
+			name = OCRLibTestUITests;
+			productName = OCRLibTestUITests;
+			productReference = D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D828CCE11E9F783100E8C596 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = linkiing;
+				TargetAttributes = {
+					D828CCE81E9F783100E8C596 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3YT4442326;
+						ProvisioningStyle = Automatic;
+					};
+					D828CD011E9F783100E8C596 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3YT4442326;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D828CCE81E9F783100E8C596;
+					};
+					D828CD0C1E9F783200E8C596 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3YT4442326;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D828CCE81E9F783100E8C596;
+					};
+				};
+			};
+			buildConfigurationList = D828CCE41E9F783100E8C596 /* Build configuration list for PBXProject "OCRLibTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D828CCE01E9F783100E8C596;
+			productRefGroup = D828CCEA1E9F783100E8C596 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D828CCE81E9F783100E8C596 /* OCRLibTest */,
+				D828CD011E9F783100E8C596 /* OCRLibTestTests */,
+				D828CD0C1E9F783200E8C596 /* OCRLibTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D828CCE71E9F783100E8C596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */,
+				D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */,
+				D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */,
+				D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CD001E9F783100E8C596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CD0B1E9F783200E8C596 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D828CCE51E9F783100E8C596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D828CCF41E9F783100E8C596 /* ViewController.m in Sources */,
+				D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */,
+				D828CCF11E9F783100E8C596 /* AppDelegate.m in Sources */,
+				D828CCEE1E9F783100E8C596 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CCFE1E9F783100E8C596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D828CD071E9F783200E8C596 /* OCRLibTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D828CD091E9F783200E8C596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D828CD121E9F783200E8C596 /* OCRLibTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D828CD041E9F783100E8C596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D828CCE81E9F783100E8C596 /* OCRLibTest */;
+			targetProxy = D828CD031E9F783100E8C596 /* PBXContainerItemProxy */;
+		};
+		D828CD0F1E9F783200E8C596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D828CCE81E9F783100E8C596 /* OCRLibTest */;
+			targetProxy = D828CD0E1E9F783200E8C596 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D828CCF51E9F783100E8C596 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D828CCF61E9F783100E8C596 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D828CCFB1E9F783100E8C596 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D828CD141E9F783200E8C596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D828CD151E9F783200E8C596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D828CD171E9F783200E8C596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YT4442326;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCRLibTest",
+				);
+				INFOPLIST_FILE = OCRLibTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D828CD181E9F783200E8C596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YT4442326;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCRLibTest",
+				);
+				INFOPLIST_FILE = OCRLibTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D828CD1A1E9F783200E8C596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3YT4442326;
+				INFOPLIST_FILE = OCRLibTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCRLibTest.app/OCRLibTest";
+			};
+			name = Debug;
+		};
+		D828CD1B1E9F783200E8C596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3YT4442326;
+				INFOPLIST_FILE = OCRLibTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCRLibTest.app/OCRLibTest";
+			};
+			name = Release;
+		};
+		D828CD1D1E9F783200E8C596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3YT4442326;
+				INFOPLIST_FILE = OCRLibTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OCRLibTest;
+			};
+			name = Debug;
+		};
+		D828CD1E1E9F783200E8C596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 3YT4442326;
+				INFOPLIST_FILE = OCRLibTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OCRLibTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D828CCE41E9F783100E8C596 /* Build configuration list for PBXProject "OCRLibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D828CD141E9F783200E8C596 /* Debug */,
+				D828CD151E9F783200E8C596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D828CD161E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D828CD171E9F783200E8C596 /* Debug */,
+				D828CD181E9F783200E8C596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D828CD191E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D828CD1A1E9F783200E8C596 /* Debug */,
+				D828CD1B1E9F783200E8C596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D828CD1C1E9F783200E8C596 /* Build configuration list for PBXNativeTarget "OCRLibTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D828CD1D1E9F783200E8C596 /* Debug */,
+				D828CD1E1E9F783200E8C596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D828CCE11E9F783100E8C596 /* Project object */;
+}
