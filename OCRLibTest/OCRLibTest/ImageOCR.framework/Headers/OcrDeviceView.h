@@ -29,6 +29,7 @@
 - (void)stopCaptureDevice;
 //复位OCR扫描
 - (void)resetCaptureDevice;
+
 @property (nonatomic, weak)id<Get_OCRImageCheck_Event_Delegate>delegate;
 
 @end

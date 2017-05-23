@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+#import "AlbumViewController.h"
 #import <ImageOCR/ImageOCR.h>
 
 @interface CameraViewController ()<Get_OCRImageCheck_Event_Delegate>
@@ -40,9 +41,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
     [self.view addSubview:self.deviceView];
     [self.view addSubview:self.overlayView];
+    self.navigationController.navigationBar.translucent = NO;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -59,26 +60,33 @@
     if (_imageOcrTypeIndex == 0) {
         //金色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_Gold_Identify:ocrImage];
-        if (ocrArray.count == 7) {
+        if ([ocrArray.firstObject count] == 7) {
             ocrTitle = [NSString stringWithFormat:
                         @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@",
-                        [ocrArray objectAtIndex:0],[ocrArray objectAtIndex:1],
-                        [ocrArray objectAtIndex:2],[ocrArray objectAtIndex:3],
-                        [ocrArray objectAtIndex:4],[ocrArray objectAtIndex:5],
-                        [ocrArray objectAtIndex:6]];
+                        [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                        [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                        [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
+                        [ocrArray.firstObject objectAtIndex:6]];
         }
     } else {
         //白色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_White_Identify:ocrImage];
-        if (ocrArray.count == 5) {
+        if ([ocrArray.firstObject count] == 5) {
             ocrTitle = [NSString stringWithFormat:
                         @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@",
-                        [ocrArray objectAtIndex:0],[ocrArray objectAtIndex:1],
-                        [ocrArray objectAtIndex:2],[ocrArray objectAtIndex:3],
-                        [ocrArray objectAtIndex:4]];
+                        [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                        [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                        [ocrArray.firstObject objectAtIndex:4]];
         }
     }
     UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
+    [alertctl addAction:[UIAlertAction actionWithTitle:@"详细" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (ocrArray.count == 2) {
+            AlbumViewController *albumctl = [[AlbumViewController alloc] init];
+            albumctl.albumMatArray = ocrArray.lastObject;
+            [self.navigationController pushViewController:albumctl animated:YES];
+        }
+    }]];
     [alertctl addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.deviceView resetCaptureDevice];
     }]];

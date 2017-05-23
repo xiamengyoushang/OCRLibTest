@@ -17,8 +17,12 @@
 		D828CD121E9F783200E8C596 /* OCRLibTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */; };
 		D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD221E9F78B900E8C596 /* CameraViewController.m */; };
 		D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D828CD231E9F78B900E8C596 /* CameraViewController.xib */; };
-		D828CD261E9F78E400E8C596 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D828CD1F1E9F786600E8C596 /* ImageOCR.framework */; };
-		D828CD271E9F78E400E8C596 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D828CD1F1E9F786600E8C596 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83066C11ED3DD3100AF948E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83066BB1ED3DD3100AF948E /* AlbumViewController.m */; };
+		D83066C21ED3DD3100AF948E /* AlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83066BC1ED3DD3100AF948E /* AlbumViewController.xib */; };
+		D83066C31ED3DD3100AF948E /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D83066BE1ED3DD3100AF948E /* CollectionReusableView.m */; };
+		D83066C41ED3DD3100AF948E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83066C01ED3DD3100AF948E /* CollectionViewCell.m */; };
+		D83066D11ED3DF1600AF948E /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83066CF1ED3DF1000AF948E /* ImageOCR.framework */; };
+		D83066D21ED3DF1600AF948E /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83066CF1ED3DF1000AF948E /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D828CD271E9F78E400E8C596 /* ImageOCR.framework in Embed Frameworks */,
+				D83066D21ED3DF1600AF948E /* ImageOCR.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +73,17 @@
 		D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRLibTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRLibTestUITests.m; sourceTree = "<group>"; };
 		D828CD131E9F783200E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D828CD1F1E9F786600E8C596 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
 		D828CD211E9F78B900E8C596 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		D828CD221E9F78B900E8C596 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		D828CD231E9F78B900E8C596 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		D83066BA1ED3DD3100AF948E /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		D83066BB1ED3DD3100AF948E /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		D83066BC1ED3DD3100AF948E /* AlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumViewController.xib; sourceTree = "<group>"; };
+		D83066BD1ED3DD3100AF948E /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		D83066BE1ED3DD3100AF948E /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		D83066BF1ED3DD3100AF948E /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		D83066C01ED3DD3100AF948E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		D83066CF1ED3DF1000AF948E /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D828CD261E9F78E400E8C596 /* ImageOCR.framework in Frameworks */,
+				D83066D11ED3DF1600AF948E /* ImageOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +135,7 @@
 		D828CCEB1E9F783100E8C596 /* OCRLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				D828CD1F1E9F786600E8C596 /* ImageOCR.framework */,
+				D83066CF1ED3DF1000AF948E /* ImageOCR.framework */,
 				D828CCEF1E9F783100E8C596 /* AppDelegate.h */,
 				D828CCF01E9F783100E8C596 /* AppDelegate.m */,
 				D828CCF21E9F783100E8C596 /* ViewController.h */,
@@ -133,6 +144,13 @@
 				D828CD211E9F78B900E8C596 /* CameraViewController.h */,
 				D828CD221E9F78B900E8C596 /* CameraViewController.m */,
 				D828CD231E9F78B900E8C596 /* CameraViewController.xib */,
+				D83066BA1ED3DD3100AF948E /* AlbumViewController.h */,
+				D83066BB1ED3DD3100AF948E /* AlbumViewController.m */,
+				D83066BC1ED3DD3100AF948E /* AlbumViewController.xib */,
+				D83066BD1ED3DD3100AF948E /* CollectionReusableView.h */,
+				D83066BE1ED3DD3100AF948E /* CollectionReusableView.m */,
+				D83066BF1ED3DD3100AF948E /* CollectionViewCell.h */,
+				D83066C01ED3DD3100AF948E /* CollectionViewCell.m */,
 				D828CCF81E9F783100E8C596 /* Assets.xcassets */,
 				D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */,
 				D828CCFD1E9F783100E8C596 /* Info.plist */,
@@ -281,6 +299,7 @@
 				D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */,
 				D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */,
 				D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */,
+				D83066C21ED3DD3100AF948E /* AlbumViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D828CCF41E9F783100E8C596 /* ViewController.m in Sources */,
+				D83066C11ED3DD3100AF948E /* AlbumViewController.m in Sources */,
 				D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */,
 				D828CCF11E9F783100E8C596 /* AppDelegate.m in Sources */,
 				D828CCEE1E9F783100E8C596 /* main.m in Sources */,
+				D83066C41ED3DD3100AF948E /* CollectionViewCell.m in Sources */,
+				D83066C31ED3DD3100AF948E /* CollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
