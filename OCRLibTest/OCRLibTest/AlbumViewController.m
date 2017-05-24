@@ -118,8 +118,8 @@ static CGSize AssetGridThumbnailSize;
             dictionary = [_albumMatArray objectAtIndex:indexPath.row+12];
         }
     }
-//    UIImage *image = [dictionary valueForKey:dictionary.allKeys.firstObject];
-//    UIImageWriteToSavedPhotosAlbum(image, self, NULL, NULL);
+    UIImage *image = [dictionary valueForKey:dictionary.allKeys.firstObject];
+    UIImageWriteToSavedPhotosAlbum(image, self, NULL, NULL);
 }
 
 @end
