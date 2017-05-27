@@ -7,7 +7,6 @@
 //
 
 #import "CameraViewController.h"
-#import "AlbumViewController.h"
 #import <ImageOCR/ImageOCR.h>
 
 @interface CameraViewController ()<Get_OCRImageCheck_Event_Delegate>
@@ -42,6 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.deviceView];
+    //OcrOverLayerView可以隐藏 客户可自定义UI但Rect不能变动
     [self.view addSubview:self.overlayView];
     self.navigationController.navigationBar.translucent = NO;
 }
@@ -60,34 +60,36 @@
     if (_imageOcrTypeIndex == 0) {
         //金色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_Gold_Identify:ocrImage];
-        if ([ocrArray.firstObject count] == 7) {
-            ocrTitle = [NSString stringWithFormat:
-                        @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@",
-                        [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
-                        [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
-                        [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
-                        [ocrArray.firstObject objectAtIndex:6]];
+        if (ocrArray.count == 0) {
+            ocrTitle = @"检测识别异常-无效区域";
+        } else {
+            if ([ocrArray.firstObject count] == 7) {
+                ocrTitle = [NSString stringWithFormat:
+                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@",
+                            [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                            [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                            [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
+                            [ocrArray.firstObject objectAtIndex:6]];
+            }
         }
     } else {
         //白色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_White_Identify:ocrImage];
-        if ([ocrArray.firstObject count] == 5) {
-            ocrTitle = [NSString stringWithFormat:
-                        @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@",
-                        [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
-                        [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
-                        [ocrArray.firstObject objectAtIndex:4]];
+        if (ocrArray.count == 0) {
+            ocrTitle = @"检测识别异常-无效区域";
+        } else {
+            if ([ocrArray.firstObject count] == 5) {
+                ocrTitle = [NSString stringWithFormat:
+                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@",
+                            [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                            [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                            [ocrArray.firstObject objectAtIndex:4]];
+            }
         }
     }
+    
     UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
-    [alertctl addAction:[UIAlertAction actionWithTitle:@"详细" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (ocrArray.count == 2) {
-            AlbumViewController *albumctl = [[AlbumViewController alloc] init];
-            albumctl.albumMatArray = ocrArray.lastObject;
-            [self.navigationController pushViewController:albumctl animated:YES];
-        }
-    }]];
-    [alertctl addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alertctl addAction:[UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.deviceView resetCaptureDevice];
     }]];
     [self presentViewController:alertctl animated:YES completion:nil];
