@@ -47,10 +47,12 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    //开启识别
     [self.deviceView beginCaptureDevice];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    //结束识别
     [self.deviceView stopCaptureDevice];
 }
 #pragma mark - Get_OCRImageCheck_Event_Delegate
@@ -63,13 +65,13 @@
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
         } else {
-            if ([ocrArray.firstObject count] == 7) {
+            if ([ocrArray.firstObject count] == 8) {
                 ocrTitle = [NSString stringWithFormat:
-                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@",
+                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@\n单位：%@",
                             [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
                             [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
                             [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
-                            [ocrArray.firstObject objectAtIndex:6]];
+                            [ocrArray.firstObject objectAtIndex:6],[ocrArray.firstObject objectAtIndex:7]];
             }
         }
     } else {
@@ -78,18 +80,19 @@
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
         } else {
-            if ([ocrArray.firstObject count] == 5) {
+            if ([ocrArray.firstObject count] == 6) {
                 ocrTitle = [NSString stringWithFormat:
-                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@",
+                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\n单位：%@",
                             [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
                             [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
-                            [ocrArray.firstObject objectAtIndex:4]];
+                            [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5]];
             }
         }
     }
     
     UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
     [alertctl addAction:[UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //识别复位
         [self.deviceView resetCaptureDevice];
     }]];
     [self presentViewController:alertctl animated:YES completion:nil];

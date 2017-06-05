@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D81A92441ED9489F00E63129 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A92421ED9489400E63129 /* ImageOCR.framework */; };
-		D81A92451ED9489F00E63129 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D81A92421ED9489400E63129 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D801BDF01EE50CBC00ED2BA0 /* 推荐左侧光线.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D801BDEC1EE50CBC00ED2BA0 /* 推荐左侧光线.PNG */; };
+		D801BDF11EE50CBC00ED2BA0 /* 推荐正光线.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D801BDED1EE50CBC00ED2BA0 /* 推荐正光线.PNG */; };
+		D801BDF21EE50CBC00ED2BA0 /* 说明.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D801BDEE1EE50CBC00ED2BA0 /* 说明.rtf */; };
+		D801BDF31EE50CBC00ED2BA0 /* 避免背对光线.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D801BDEF1EE50CBC00ED2BA0 /* 避免背对光线.PNG */; };
+		D801C8C21EE5205A00ED2BA0 /* 单位kPa.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D801C8C01EE5205A00ED2BA0 /* 单位kPa.PNG */; };
+		D801C8C31EE5205A00ED2BA0 /* 单位mmHg.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D801C8C11EE5205A00ED2BA0 /* 单位mmHg.PNG */; };
+		D801C8C61EE522A000ED2BA0 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D801C8C41EE5229600ED2BA0 /* ImageOCR.framework */; };
+		D801C8C71EE522A000ED2BA0 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D801C8C41EE5229600ED2BA0 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D828CCEE1E9F783100E8C596 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCED1E9F783100E8C596 /* main.m */; };
 		D828CCF11E9F783100E8C596 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCF01E9F783100E8C596 /* AppDelegate.m */; };
 		D828CCF41E9F783100E8C596 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CCF31E9F783100E8C596 /* ViewController.m */; };
@@ -45,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D81A92451ED9489F00E63129 /* ImageOCR.framework in Embed Frameworks */,
+				D801C8C71EE522A000ED2BA0 /* ImageOCR.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +59,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D81A92421ED9489400E63129 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
+		D801BDEC1EE50CBC00ED2BA0 /* 推荐左侧光线.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "推荐左侧光线.PNG"; sourceTree = "<group>"; };
+		D801BDED1EE50CBC00ED2BA0 /* 推荐正光线.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "推荐正光线.PNG"; sourceTree = "<group>"; };
+		D801BDEE1EE50CBC00ED2BA0 /* 说明.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "说明.rtf"; sourceTree = "<group>"; };
+		D801BDEF1EE50CBC00ED2BA0 /* 避免背对光线.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "避免背对光线.PNG"; sourceTree = "<group>"; };
+		D801C8C01EE5205A00ED2BA0 /* 单位kPa.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单位kPa.PNG"; sourceTree = "<group>"; };
+		D801C8C11EE5205A00ED2BA0 /* 单位mmHg.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "单位mmHg.PNG"; sourceTree = "<group>"; };
+		D801C8C41EE5229600ED2BA0 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
 		D828CCE91E9F783100E8C596 /* OCRLibTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRLibTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D828CCED1E9F783100E8C596 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D828CCEF1E9F783100E8C596 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D81A92441ED9489F00E63129 /* ImageOCR.framework in Frameworks */,
+				D801C8C61EE522A000ED2BA0 /* ImageOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +113,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D801BDEB1EE50CBC00ED2BA0 /* 说明 */ = {
+			isa = PBXGroup;
+			children = (
+				D801C8C01EE5205A00ED2BA0 /* 单位kPa.PNG */,
+				D801C8C11EE5205A00ED2BA0 /* 单位mmHg.PNG */,
+				D801BDEC1EE50CBC00ED2BA0 /* 推荐左侧光线.PNG */,
+				D801BDED1EE50CBC00ED2BA0 /* 推荐正光线.PNG */,
+				D801BDEE1EE50CBC00ED2BA0 /* 说明.rtf */,
+				D801BDEF1EE50CBC00ED2BA0 /* 避免背对光线.PNG */,
+			);
+			path = "说明";
+			sourceTree = "<group>";
+		};
 		D828CCE01E9F783100E8C596 = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +149,8 @@
 		D828CCEB1E9F783100E8C596 /* OCRLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				D81A92421ED9489400E63129 /* ImageOCR.framework */,
+				D801C8C41EE5229600ED2BA0 /* ImageOCR.framework */,
+				D801BDEB1EE50CBC00ED2BA0 /* 说明 */,
 				D828CCEF1E9F783100E8C596 /* AppDelegate.h */,
 				D828CCF01E9F783100E8C596 /* AppDelegate.m */,
 				D828CCF21E9F783100E8C596 /* ViewController.h */,
@@ -280,7 +306,13 @@
 				D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */,
 				D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */,
 				D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */,
+				D801BDF11EE50CBC00ED2BA0 /* 推荐正光线.PNG in Resources */,
+				D801BDF21EE50CBC00ED2BA0 /* 说明.rtf in Resources */,
 				D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */,
+				D801C8C21EE5205A00ED2BA0 /* 单位kPa.PNG in Resources */,
+				D801BDF31EE50CBC00ED2BA0 /* 避免背对光线.PNG in Resources */,
+				D801C8C31EE5205A00ED2BA0 /* 单位mmHg.PNG in Resources */,
+				D801BDF01EE50CBC00ED2BA0 /* 推荐左侧光线.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
