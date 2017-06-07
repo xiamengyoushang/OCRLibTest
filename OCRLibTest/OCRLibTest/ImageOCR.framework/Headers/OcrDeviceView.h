@@ -11,10 +11,9 @@
 #import "ImageOCRLib.h"
 
 #define OCRDEVICETITLE1  @"未检测到边框"
-#define OCRDEVICETITLE2  @"请将显示器对齐边框边缘"
-#define OCRDEVICETITLE3  @"不在检测框内"
-#define OCRDEVICETITLE4  @"正在调整对焦"
-#define OCRDEVICETITLE5  @"检测识别错误"
+#define OCRDEVICETITLE2  @"检测到无效区域"
+#define OCRDEVICETITLE3  @"请对齐边框边缘"
+#define OCRDEVICETITLE4  @"设备当前正在对焦"
 
 @protocol Get_OCRImageCheck_Event_Delegate <NSObject>
 
