@@ -62,6 +62,7 @@
     if (_imageOcrTypeIndex == 0) {
         //金色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_Gold_Identify:ocrImage];
+        NSLog(@"%@",ocrArray);
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
         } else {
@@ -91,7 +92,7 @@
     }
     
     UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
-    [alertctl addAction:[UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alertctl addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //识别复位
         [self.deviceView resetCaptureDevice];
     }]];
