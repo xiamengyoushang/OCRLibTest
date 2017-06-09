@@ -62,7 +62,6 @@
     if (_imageOcrTypeIndex == 0) {
         //金色血压器OCR检测
         ocrArray = [ImageOCRLib ImageOCRlib_Gold_Identify:ocrImage];
-        NSLog(@"%@",ocrArray);
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
         } else {

@@ -16,4 +16,6 @@
 //白色血压器OCR检测
 + (NSArray *)ImageOCRlib_White_Identify:(UIImage *)originalImage;
 
++ (BOOL) whetherTheImageBlurry:(UIImage*)originalImage;
+
 @end
