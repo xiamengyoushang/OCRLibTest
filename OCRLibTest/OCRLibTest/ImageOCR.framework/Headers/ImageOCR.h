@@ -10,4 +10,3 @@
 
 #import "ImageOCRLib.h"
 #import "OcrDeviceView.h"
-#import "OcrOverLayerView.h"

@@ -9,53 +9,62 @@
 #import "CameraViewController.h"
 #import <ImageOCR/ImageOCR.h>
 
+#define OCRDEVICETITLE1  @"未检测到边框"
+#define OCRDEVICETITLE2  @"检测到无效区域"
+#define OCRDEVICETITLE3  @"设备当前正在对焦"
+#define OCRDEVICETITLE4  @"识别区域清晰度差"
+
 @interface CameraViewController ()<Get_OCRImageCheck_Event_Delegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *showLabel;
 @property (nonatomic, strong) OcrDeviceView *deviceView;
-@property (nonatomic, strong) OcrOverLayerView *overlayView;
 
 @end
 
 @implementation CameraViewController
 
-- (CGRect)rectForPreviewLayer {
-    CGRect rect = [UIScreen mainScreen].bounds;
-    rect.size.height -= 64;
-    return rect;
-}
 - (OcrDeviceView *)deviceView{
     if (!_deviceView) {
-        CGRect rect = [self rectForPreviewLayer];
-        _deviceView = [[OcrDeviceView alloc] initWithFrame:rect];
+        _deviceView = [[OcrDeviceView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _deviceView.delegate = self;
     }
     return _deviceView;
 }
-- (OcrOverLayerView *)overlayView {
-    if(!_overlayView) {
-        CGRect rect = [OcrOverLayerView getOverlayFrame:[self rectForPreviewLayer]];
-        _overlayView = [[OcrOverLayerView alloc] initWithFrame:rect];
-    }
-    return _overlayView;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.deviceView];
-    //OcrOverLayerView可以隐藏 客户可自定义UI但Rect不能变动
-    [self.view addSubview:self.overlayView];
-    self.navigationController.navigationBar.translucent = NO;
+    [self.view insertSubview:self.deviceView atIndex:0];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //开启识别
     [self.deviceView beginCaptureDevice];
+    self.navigationController.navigationBar.hidden = YES;
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    //结束识别
     [self.deviceView stopCaptureDevice];
+    self.navigationController.navigationBar.hidden = NO;
+}
+#pragma mark - UIButton
+- (IBAction)clickBackBtn:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - Get_OCRImageCheck_Event_Delegate
+- (void)get_get_OcrImageCheckState:(NSInteger)state{
+    switch (state) {
+        case 0:
+            _showLabel.text = OCRDEVICETITLE1;
+            break;
+        case 1:
+            _showLabel.text = OCRDEVICETITLE2;
+            break;
+        case 2:
+            _showLabel.text = OCRDEVICETITLE3;
+            break;
+        case 3:
+            _showLabel.text = OCRDEVICETITLE4;
+            break;
+    }
+}
 - (void)get_OcrImageCheck_Event:(UIImage *)ocrImage{
     NSArray *ocrArray = NULL;
     NSString *ocrTitle = NULL;

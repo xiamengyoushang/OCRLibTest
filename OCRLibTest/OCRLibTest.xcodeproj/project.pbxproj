@@ -15,10 +15,10 @@
 		D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */; };
 		D828CD071E9F783200E8C596 /* OCRLibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD061E9F783200E8C596 /* OCRLibTestTests.m */; };
 		D828CD121E9F783200E8C596 /* OCRLibTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */; };
-		D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD221E9F78B900E8C596 /* CameraViewController.m */; };
-		D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D828CD231E9F78B900E8C596 /* CameraViewController.xib */; };
-		D8BBD9F51EEAA32B00E71A5B /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BBD9F31EEAA32000E71A5B /* ImageOCR.framework */; };
-		D8BBD9F61EEAA32B00E71A5B /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8BBD9F31EEAA32000E71A5B /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D85F27241F03A51900FFB6CA /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85F27221F03A51000FFB6CA /* ImageOCR.framework */; };
+		D85F27251F03A51900FFB6CA /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D85F27221F03A51000FFB6CA /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D85F27291F03A54A00FFB6CA /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85F27271F03A54A00FFB6CA /* CameraViewController.m */; };
+		D85F272A1F03A54A00FFB6CA /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85F27281F03A54A00FFB6CA /* CameraViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D8BBD9F61EEAA32B00E71A5B /* ImageOCR.framework in Embed Frameworks */,
+				D85F27251F03A51900FFB6CA /* ImageOCR.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +69,10 @@
 		D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRLibTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRLibTestUITests.m; sourceTree = "<group>"; };
 		D828CD131E9F783200E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D828CD211E9F78B900E8C596 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		D828CD221E9F78B900E8C596 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		D828CD231E9F78B900E8C596 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
-		D8BBD9F31EEAA32000E71A5B /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
+		D85F27221F03A51000FFB6CA /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
+		D85F27261F03A54A00FFB6CA /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		D85F27271F03A54A00FFB6CA /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		D85F27281F03A54A00FFB6CA /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8BBD9F51EEAA32B00E71A5B /* ImageOCR.framework in Frameworks */,
+				D85F27241F03A51900FFB6CA /* ImageOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,15 +124,15 @@
 		D828CCEB1E9F783100E8C596 /* OCRLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				D8BBD9F31EEAA32000E71A5B /* ImageOCR.framework */,
+				D85F27221F03A51000FFB6CA /* ImageOCR.framework */,
 				D828CCEF1E9F783100E8C596 /* AppDelegate.h */,
 				D828CCF01E9F783100E8C596 /* AppDelegate.m */,
 				D828CCF21E9F783100E8C596 /* ViewController.h */,
 				D828CCF31E9F783100E8C596 /* ViewController.m */,
 				D828CCF51E9F783100E8C596 /* Main.storyboard */,
-				D828CD211E9F78B900E8C596 /* CameraViewController.h */,
-				D828CD221E9F78B900E8C596 /* CameraViewController.m */,
-				D828CD231E9F78B900E8C596 /* CameraViewController.xib */,
+				D85F27261F03A54A00FFB6CA /* CameraViewController.h */,
+				D85F27271F03A54A00FFB6CA /* CameraViewController.m */,
+				D85F27281F03A54A00FFB6CA /* CameraViewController.xib */,
 				D828CCF81E9F783100E8C596 /* Assets.xcassets */,
 				D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */,
 				D828CCFD1E9F783100E8C596 /* Info.plist */,
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */,
-				D828CD251E9F78B900E8C596 /* CameraViewController.xib in Resources */,
+				D85F272A1F03A54A00FFB6CA /* CameraViewController.xib in Resources */,
 				D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */,
 				D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */,
 			);
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D828CCF41E9F783100E8C596 /* ViewController.m in Sources */,
-				D828CD241E9F78B900E8C596 /* CameraViewController.m in Sources */,
+				D85F27291F03A54A00FFB6CA /* CameraViewController.m in Sources */,
 				D828CCF11E9F783100E8C596 /* AppDelegate.m in Sources */,
 				D828CCEE1E9F783100E8C596 /* main.m in Sources */,
 			);
