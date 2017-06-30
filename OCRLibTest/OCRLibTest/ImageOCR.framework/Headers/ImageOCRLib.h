@@ -10,12 +10,8 @@
 
 @interface ImageOCRLib : NSObject
 
-//金色血压器OCR检测
-+ (NSArray *)ImageOCRlib_Gold_Identify:(UIImage *)originalImage;
++ (NSArray *)ImageOCRlib_Result_Identify:(UIImage *)originalImage;
 
-//白色血压器OCR检测
-+ (NSArray *)ImageOCRlib_White_Identify:(UIImage *)originalImage;
-
-+ (BOOL) whetherTheImageBlurry:(UIImage*)originalImage;
++ (BOOL)whetherTheImageBlurry:(UIImage*)originalImage;
 
 @end

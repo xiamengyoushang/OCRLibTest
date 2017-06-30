@@ -15,7 +15,7 @@
 - (void)get_get_OcrImageCheckState:(NSInteger)state;
 
 @required
-- (void)get_OcrImageCheck_Event:(UIImage *)ocrImage;
+- (void)get_OcrImageCheck_Event:(UIImage *)ocrImage andQRCode:(NSString*)messageString;
 
 @end
 @interface OcrDeviceView : UIView

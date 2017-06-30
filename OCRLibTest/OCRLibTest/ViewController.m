@@ -23,14 +23,11 @@
     self.navigationController.navigationBar.translucent = NO;
 }
 #pragma mark - UITableViewDataSource
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
-}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 1;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId = @"cellId";
@@ -39,19 +36,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"OCR图形检测-金色";
-    } else if (indexPath.row == 1){
-        cell.textLabel.text = @"OCR图形检测-白色";
-    }
+    cell.textLabel.text = @"OCR识别检测";
     return cell;
 }
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CameraViewController *cameractl = [[CameraViewController alloc] init];
-    cameractl.imageOcrTypeIndex = indexPath.row;
     [self.navigationController pushViewController:cameractl animated:YES];
 }
-
 
 @end

@@ -9,6 +9,8 @@
 #import "CameraViewController.h"
 #import <ImageOCR/ImageOCR.h>
 
+//https://github.com/xiamengyoushang/OCRLibTest
+
 #define OCRDEVICETITLE1  @"未检测到边框"
 #define OCRDEVICETITLE2  @"检测到无效区域"
 #define OCRDEVICETITLE3  @"设备当前正在对焦"
@@ -65,46 +67,45 @@
             break;
     }
 }
-- (void)get_OcrImageCheck_Event:(UIImage *)ocrImage{
-    NSArray *ocrArray = NULL;
-    NSString *ocrTitle = NULL;
-    if (_imageOcrTypeIndex == 0) {
-        //金色血压器OCR检测
-        ocrArray = [ImageOCRLib ImageOCRlib_Gold_Identify:ocrImage];
+- (void)get_OcrImageCheck_Event:(UIImage *)ocrImage andQRCode:(NSString *)messageString{
+    if (ocrImage) {
+        NSString *ocrTitle = NULL;
+        NSArray *ocrArray = [ImageOCRLib ImageOCRlib_Result_Identify:ocrImage];
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
         } else {
-            if ([ocrArray.firstObject count] == 8) {
-                ocrTitle = [NSString stringWithFormat:
-                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@\n单位：%@",
-                            [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
-                            [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
-                            [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
-                            [ocrArray.firstObject objectAtIndex:6],[ocrArray.firstObject objectAtIndex:7]];
+            NSString *deviceType = [ocrArray.firstObject lastObject];
+            if ([deviceType containsString:@"BP04"]) {
+                if ([ocrArray.firstObject count] == 9) {
+                    ocrTitle = [NSString stringWithFormat:
+                                @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\nCSBP：%@\nCAPP：%@\n单位：%@\n仪器：%@",
+                                [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                                [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                                [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],
+                                [ocrArray.firstObject objectAtIndex:6],[ocrArray.firstObject objectAtIndex:7],[ocrArray.firstObject objectAtIndex:8]];
+                }
+            } else {
+                if ([ocrArray.firstObject count] == 7) {
+                    ocrTitle = [NSString stringWithFormat:
+                                @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\n单位：%@\n仪器：%@",
+                                [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
+                                [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
+                                [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5],[ocrArray.firstObject objectAtIndex:6]];
+                }
             }
         }
+        UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
+        [alertctl addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.deviceView resetCaptureDevice];
+        }]];
+        [self presentViewController:alertctl animated:YES completion:nil];
     } else {
-        //白色血压器OCR检测
-        ocrArray = [ImageOCRLib ImageOCRlib_White_Identify:ocrImage];
-        if (ocrArray.count == 0) {
-            ocrTitle = @"检测识别异常-无效区域";
-        } else {
-            if ([ocrArray.firstObject count] == 6) {
-                ocrTitle = [NSString stringWithFormat:
-                            @"高压：%@\n低压：%@\n脉搏：%@\nAVI：%@\nAPI：%@\n单位：%@",
-                            [ocrArray.firstObject objectAtIndex:0],[ocrArray.firstObject objectAtIndex:1],
-                            [ocrArray.firstObject objectAtIndex:2],[ocrArray.firstObject objectAtIndex:3],
-                            [ocrArray.firstObject objectAtIndex:4],[ocrArray.firstObject objectAtIndex:5]];
-            }
-        }
+        UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测到二维码" message:messageString preferredStyle:UIAlertControllerStyleAlert];
+        [alertctl addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.deviceView resetCaptureDevice];
+        }]];
+        [self presentViewController:alertctl animated:YES completion:nil];
     }
-    
-    UIAlertController *alertctl = [UIAlertController alertControllerWithTitle:@"检测结果" message:ocrTitle preferredStyle:UIAlertControllerStyleAlert];
-    [alertctl addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //识别复位
-        [self.deviceView resetCaptureDevice];
-    }]];
-    [self presentViewController:alertctl animated:YES completion:nil];
 }
 
 @end

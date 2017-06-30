@@ -10,6 +10,5 @@
 
 @interface CameraViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger imageOcrTypeIndex;
 
 @end
