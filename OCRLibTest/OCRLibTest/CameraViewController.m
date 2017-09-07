@@ -7,7 +7,10 @@
 //
 
 #import "CameraViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 #import <ImageOCR/ImageOCR.h>
+
+SystemSoundID systemRingtoneSoundID;
 
 //https://github.com/xiamengyoushang/OCRLibTest
 
@@ -34,6 +37,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSURL *soundWolfURL=[[NSBundle mainBundle] URLForResource:@"ringtong" withExtension:@"wav"];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(soundWolfURL), &systemRingtoneSoundID);
     [self.view insertSubview:self.deviceView atIndex:0];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -73,7 +78,12 @@
         NSArray *ocrArray = [ImageOCRLib ImageOCRlib_Result_Identify:ocrImage];
         if (ocrArray.count == 0) {
             ocrTitle = @"检测识别异常-无效区域";
+            /**新增:直接复位重新识别**/
+            [self.deviceView resetCaptureDevice];
+            return;
         } else {
+            /**新增:识别提示音-可删**/
+            AudioServicesPlaySystemSound(systemRingtoneSoundID);
             NSString *deviceType = [ocrArray.firstObject lastObject];
             if ([deviceType containsString:@"BP04"]) {
                 if ([ocrArray.firstObject count] == 9) {

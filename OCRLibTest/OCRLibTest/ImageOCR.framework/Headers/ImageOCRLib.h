@@ -12,6 +12,6 @@
 
 + (NSArray *)ImageOCRlib_Result_Identify:(UIImage *)originalImage;
 
-+ (BOOL)whetherTheImageBlurry:(UIImage*)originalImage;
++ (BOOL) whetherTheImageBlurry:(UIImage*)originalImage;
 
 @end
