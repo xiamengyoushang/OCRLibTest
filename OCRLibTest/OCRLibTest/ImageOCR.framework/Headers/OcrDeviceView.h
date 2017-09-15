@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ImageOCRLib.h"
 
+#define DEVICE_ISIPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 @protocol Get_OCRImageCheck_Event_Delegate <NSObject>
 
 @optional
@@ -26,6 +28,8 @@
 - (void)stopCaptureDevice;
 //复位OCR扫描
 - (void)resetCaptureDevice;
+//获取边框Rect
+- (CGRect)getOverlayFrame:(CGRect)rect;
 
 @property (nonatomic, weak)id<Get_OCRImageCheck_Event_Delegate>delegate;
 

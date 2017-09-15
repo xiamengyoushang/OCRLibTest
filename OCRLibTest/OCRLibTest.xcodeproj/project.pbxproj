@@ -15,11 +15,10 @@
 		D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */; };
 		D828CD071E9F783200E8C596 /* OCRLibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD061E9F783200E8C596 /* OCRLibTestTests.m */; };
 		D828CD121E9F783200E8C596 /* OCRLibTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */; };
-		D82EDB5C1F612D89004829D0 /* ringtong.wav in Resources */ = {isa = PBXBuildFile; fileRef = D82EDB5B1F612D89004829D0 /* ringtong.wav */; };
-		D82EDB5D1F612DD6004829D0 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82EDB591F612D42004829D0 /* ImageOCR.framework */; };
-		D82EDB5E1F612DD6004829D0 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D82EDB591F612D42004829D0 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D84B40571F061E040057D874 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84B40551F061E040057D874 /* CameraViewController.m */; };
 		D84B40581F061E040057D874 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84B40561F061E040057D874 /* CameraViewController.xib */; };
+		D8F7AA271F6BACA600B24547 /* ImageOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7AA251F6BACA100B24547 /* ImageOCR.framework */; };
+		D8F7AA281F6BACA600B24547 /* ImageOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7AA251F6BACA100B24547 /* ImageOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D82EDB5E1F612DD6004829D0 /* ImageOCR.framework in Embed Frameworks */,
+				D8F7AA281F6BACA600B24547 /* ImageOCR.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,11 +69,10 @@
 		D828CD0D1E9F783200E8C596 /* OCRLibTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRLibTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D828CD111E9F783200E8C596 /* OCRLibTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRLibTestUITests.m; sourceTree = "<group>"; };
 		D828CD131E9F783200E8C596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D82EDB591F612D42004829D0 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
-		D82EDB5B1F612D89004829D0 /* ringtong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtong.wav; sourceTree = "<group>"; };
 		D84B40541F061E040057D874 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		D84B40551F061E040057D874 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		D84B40561F061E040057D874 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		D8F7AA251F6BACA100B24547 /* ImageOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImageOCR.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82EDB5D1F612DD6004829D0 /* ImageOCR.framework in Frameworks */,
+				D8F7AA271F6BACA600B24547 /* ImageOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +124,7 @@
 		D828CCEB1E9F783100E8C596 /* OCRLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				D82EDB591F612D42004829D0 /* ImageOCR.framework */,
+				D8F7AA251F6BACA100B24547 /* ImageOCR.framework */,
 				D828CCEF1E9F783100E8C596 /* AppDelegate.h */,
 				D828CCF01E9F783100E8C596 /* AppDelegate.m */,
 				D828CCF21E9F783100E8C596 /* ViewController.h */,
@@ -138,7 +136,6 @@
 				D828CCF81E9F783100E8C596 /* Assets.xcassets */,
 				D828CCFA1E9F783100E8C596 /* LaunchScreen.storyboard */,
 				D828CCFD1E9F783100E8C596 /* Info.plist */,
-				D82EDB5B1F612D89004829D0 /* ringtong.wav */,
 				D828CCEC1E9F783100E8C596 /* Supporting Files */,
 			);
 			path = OCRLibTest;
@@ -283,7 +280,6 @@
 				D828CCFC1E9F783100E8C596 /* LaunchScreen.storyboard in Resources */,
 				D84B40581F061E040057D874 /* CameraViewController.xib in Resources */,
 				D828CCF91E9F783100E8C596 /* Assets.xcassets in Resources */,
-				D82EDB5C1F612D89004829D0 /* ringtong.wav in Resources */,
 				D828CCF71E9F783100E8C596 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -488,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linkiing.OCRLibTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

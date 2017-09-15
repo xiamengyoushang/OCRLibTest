@@ -7,10 +7,7 @@
 //
 
 #import "CameraViewController.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import <ImageOCR/ImageOCR.h>
-
-SystemSoundID systemRingtoneSoundID;
 
 //https://github.com/xiamengyoushang/OCRLibTest
 
@@ -35,11 +32,21 @@ SystemSoundID systemRingtoneSoundID;
     }
     return _deviceView;
 }
+- (void)creatShadeView{
+    if (DEVICE_ISIPAD) {
+        //iPad识别需要新增取景框(iphone也适用但可隐藏)
+        UIView *shaderview = [UIView new];
+        shaderview.frame = [_deviceView getOverlayFrame:_deviceView.frame];
+        shaderview.layer.borderWidth = 2;
+        shaderview.layer.borderColor = [UIColor orangeColor].CGColor;
+        shaderview.layer.cornerRadius = 2;
+        [self.view addSubview:shaderview];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *soundWolfURL=[[NSBundle mainBundle] URLForResource:@"ringtong" withExtension:@"wav"];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(soundWolfURL), &systemRingtoneSoundID);
     [self.view insertSubview:self.deviceView atIndex:0];
+    [self creatShadeView];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -82,8 +89,6 @@ SystemSoundID systemRingtoneSoundID;
             [self.deviceView resetCaptureDevice];
             return;
         } else {
-            /**新增:识别提示音-可删**/
-            AudioServicesPlaySystemSound(systemRingtoneSoundID);
             NSString *deviceType = [ocrArray.firstObject lastObject];
             if ([deviceType containsString:@"BP04"]) {
                 if ([ocrArray.firstObject count] == 9) {
