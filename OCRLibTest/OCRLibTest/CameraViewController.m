@@ -33,15 +33,14 @@
     return _deviceView;
 }
 - (void)creatShadeView{
-    if (DEVICE_ISIPAD) {
-        //iPad识别需要新增取景框(iphone也适用但可隐藏)
-        UIView *shaderview = [UIView new];
-        shaderview.frame = [_deviceView getOverlayFrame:_deviceView.frame];
-        shaderview.layer.borderWidth = 2;
-        shaderview.layer.borderColor = [UIColor orangeColor].CGColor;
-        shaderview.layer.cornerRadius = 2;
-        [self.view addSubview:shaderview];
-    }
+    //新增引导边框，Rect大小已给出，UI可自定义
+    UIView *shaderview = [UIView new];
+    CGRect rect = [_deviceView getOverlayFrame:_deviceView.frame];
+    shaderview.frame = rect;
+    shaderview.layer.borderWidth = 1;
+    shaderview.layer.borderColor = [UIColor orangeColor].CGColor;
+    shaderview.layer.cornerRadius = 1;
+    [self.view addSubview:shaderview];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
